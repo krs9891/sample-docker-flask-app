@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app-container
-          image: gcr.io/$PROJECT_ID/$REPO_NAME:latest
+          image: gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
           ports:
             - containerPort: 5000
           env:
