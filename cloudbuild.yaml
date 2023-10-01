@@ -8,6 +8,6 @@ steps:
       - run
       - --filename=gke.yaml
       - --image=gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
-      - --locatuiotn=us-central1-c
+      - --location=us-central1-c
       - --cluster=cluster-1
       - --namespace=flask-app-prod
