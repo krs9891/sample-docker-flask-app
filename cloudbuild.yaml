@@ -1,13 +1,13 @@
 steps:
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME", "."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME-dev", "."]
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME"]
+    args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME-dev"]
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
       - run
       - --filename=gke.yaml
-      - --image=gcr.io/$PROJECT_ID/$REPO_NAME
+      - --image=gcr.io/$PROJECT_ID/$REPO_NAME-dev
       - --location=us-central1-c
       - --cluster=cluster-1
-      - --namespace=flask-app-prod
+      - --namespace=flask-app-dev
