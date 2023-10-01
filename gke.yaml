@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app-container
-          image: gcr.io/$PROJECT_ID/$REPO_NAME:latest
+          image: gcr.io/clean-wonder-400608/sample-docker-flask-app:latest
           ports:
             - containerPort: 5000
           env:
